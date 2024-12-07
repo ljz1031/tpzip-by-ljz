@@ -1,0 +1,262 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #86868b;
+    font-size: 1.1rem;
+}
+
+/* 上传区域样式 */
+.upload-area {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.upload-box {
+    border: 2px dashed #d2d2d7;
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #0071e3;
+    background: #f5f5f7;
+}
+
+.upload-box.dragover {
+    border-color: #0071e3;
+    background: #f5f5f7;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.upload-label {
+    color: #0071e3;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.upload-label:hover {
+    color: #0077ed;
+}
+
+.support-text {
+    color: #86868b;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* 预览区域样式 */
+.preview-area {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.preview-box {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container {
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f7;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.file-info {
+    color: #86868b;
+    font-size: 0.9rem;
+}
+
+/* 压缩控制区域 */
+.compress-controls {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 2rem;
+}
+
+.quality-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: #d2d2d7;
+    border-radius: 2px;
+    outline: none;
+}
+
+.download-btn {
+    background: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #0077ed;
+    transform: translateY(-1px);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .preview-container {
+        flex-direction: column;
+    }
+
+    .quality-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* 加载状态样式 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0071e3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    margin-top: 1rem;
+    color: #1d1d1f;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: #d2d2d7;
+    border-radius: 2px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: #0071e3;
+    transition: width 0.3s ease;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 错误消息样式 */
+.error-message {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #fff2f2;
+    border-radius: 12px;
+}
+
+.error-text {
+    color: #ff3b30;
+    margin-bottom: 0.5rem;
+}
+
+.retry-btn {
+    background: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+    background: #0077ed;
+    transform: translateY(-1px);
+}
+
+/* 当显示时使用 flex 布局 */
+.loading-overlay:not([hidden]) {
+    display: flex;
+} 
