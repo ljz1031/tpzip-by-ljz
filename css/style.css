@@ -11,12 +11,16 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f7;
+   min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    flex: 1;
 }
 
 /* 头部样式 */
@@ -72,14 +76,9 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.upload-label {
+.upload-boxlabel {
     color: #0071e3;
     cursor: pointer;
-    text-decoration: underline;
-}
-
-.upload-label:hover {
-    color: #0077ed;
 }
 
 .support-text {
@@ -185,7 +184,7 @@ input[type="range"] {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.9);
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -259,4 +258,41 @@ input[type="range"] {
 /* 当显示时使用 flex 布局 */
 .loading-overlay:not([hidden]) {
     display: flex;
-} 
+}
+
+/* 页脚样式 */
+.site-footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background: linear-gradient(to right, #f5f5f7, #fff, #f5f5f7);
+    border-top: 1px solid #e5e5e7;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #86868b;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    padding: 0 2rem;
+}
+
+.developer {
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.email {
+    color: #0071e3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email:hover {
+    color: #0077ed;
+    text-decoration: underline;
+}
+`
+</``rewritten_file>
